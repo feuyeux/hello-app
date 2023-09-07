@@ -1,4 +1,4 @@
-import 'package:fixnum/src/int64.dart';
+import 'package:fixnum/fixnum.dart';
 import 'package:uuid/uuid.dart';
 import 'dart:math' show Random;
 

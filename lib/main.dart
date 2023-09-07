@@ -1,6 +1,12 @@
+import 'dart:math';
+
+import 'common/common.dart';
+import 'common/landing.pbgrpc.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'conn/conn.dart';
+import 'package:grpc/grpc.dart';
 
 void main() {
   runApp(HelloApp());
@@ -14,7 +20,6 @@ class HelloApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => HelloAppState(),
       child: MaterialApp(
-        title: 'Hello Flutter App',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
               seedColor: const Color.fromRGBO(0, 255, 0, 1.0)),
@@ -27,16 +32,15 @@ class HelloApp extends StatelessWidget {
 }
 
 class HelloAppState extends ChangeNotifier {
+  // words
   var current = WordPair.random();
-
   void getNext() {
     current = WordPair.random();
-
     notifyListeners();
   }
 
+  // favorites
   var favorites = <WordPair>[];
-
   void toggleFavorite() {
     if (favorites.contains(current)) {
       favorites.remove(current);
@@ -44,6 +48,88 @@ class HelloAppState extends ChangeNotifier {
       favorites.add(current);
     }
     notifyListeners();
+  }
+
+  // grpc
+  var list = <String>[];
+  Future<void> askRPC() async {
+    list.clear();
+    list.add("====BEGIN====");
+    final channel = ClientChannel('127.0.0.1',
+        port: Conn.port,
+        options:
+            const ChannelOptions(credentials: ChannelCredentials.insecure()));
+    stub = LandingServiceClient(channel,
+        options: CallOptions(timeout: Duration(seconds: 30)));
+    // Run all of the demos in order.
+    try {
+      TalkRequest request = TalkRequest()
+        ..data = Utils.randomId(5)
+        ..meta = "DART";
+      await talk(request);
+      request = TalkRequest()
+        ..data =
+            "${Utils.randomId(5)},${Utils.randomId(5)},${Utils.randomId(5)}"
+        ..meta = "DART";
+      await talkOneAnswerMore(request);
+      await talkMoreAnswerOne();
+      await talkBidirectional();
+    } catch (e) {
+      print('Caught error: $e');
+    }
+    await channel.shutdown();
+    list.add("====END====");
+    notifyListeners();
+  }
+
+  Future<TalkResponse> talk(TalkRequest request) async {
+    final response = await stub.talk(request);
+    list.add("Request/Response");
+    list.add(response.toString());
+    return response;
+  }
+
+  Future<void> talkOneAnswerMore(TalkRequest request) async {
+    await for (var response in stub.talkOneAnswerMore(request)) {
+      list.add("Server Streaming");
+      list.add(response.toString());
+    }
+  }
+
+  Future<void> talkMoreAnswerOne() async {
+    Stream<TalkRequest> generateRequest(int count) async* {
+      final random = Random();
+      for (var i = 0; i < count; i++) {
+        TalkRequest request = TalkRequest()
+          ..data = Utils.randomId(5)
+          ..meta = "DART";
+        yield request;
+        await Future.delayed(Duration(milliseconds: 100 + random.nextInt(100)));
+      }
+    }
+
+    final response = await stub.talkMoreAnswerOne(generateRequest(3));
+    list.add("Client Streaming");
+    list.add(response.toString());
+  }
+
+  Future<void> talkBidirectional() async {
+    Stream<TalkRequest> generateRequests() async* {
+      for (var i = 0; i < 3; i++) {
+        TalkRequest request = TalkRequest()
+          ..data = Utils.randomId(5)
+          ..meta = "DART";
+        // Short delay to simulate some other interaction.
+        await Future.delayed(Duration(milliseconds: 10));
+        yield request;
+      }
+    }
+
+    final call = stub.talkBidirectional(generateRequests());
+    await for (var response in call) {
+      list.add("Bidirectional Streaming");
+      list.add(response.toString());
+    }
   }
 }
 
@@ -63,8 +149,11 @@ class _HelloHomePageState extends State<HelloHomePage> {
         page = GeneratorPage();
         break;
       case 1:
-        // page = Placeholder();
         page = FavoritesPage();
+        break;
+      case 2:
+        // page = Placeholder();
+        page = AsksPage();
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
@@ -78,6 +167,7 @@ class _HelloHomePageState extends State<HelloHomePage> {
               child: NavigationRail(
                 extended: constraints.maxWidth >= 600,
                 destinations: [
+                  // https://fonts.google.com/icons
                   NavigationRailDestination(
                     icon: Icon(Icons.home),
                     label: Text('Home'),
@@ -85,6 +175,10 @@ class _HelloHomePageState extends State<HelloHomePage> {
                   NavigationRailDestination(
                     icon: Icon(Icons.favorite),
                     label: Text('Favorites'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.water),
+                    label: Text('Asks'),
                   ),
                 ],
                 selectedIndex: selectedIndex,
@@ -207,6 +301,38 @@ class FavoritesPage extends StatelessWidget {
             title: Text(pair.asLowerCase),
           ),
       ],
+    );
+  }
+}
+
+late LandingServiceClient stub;
+
+class AsksPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<HelloAppState>();
+
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(30.0),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  appState.askRPC();
+                },
+                child: Text('ASK gRPC Server From Flutter'),
+              ),
+            ],
+          ),
+          Padding(padding: const EdgeInsets.all(20)),
+          for (var response in appState.list)
+            ListTile(
+              title: Text(response.toString()),
+            ),
+        ],
+      ),
     );
   }
 }

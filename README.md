@@ -64,6 +64,12 @@ VIDEO：
 - [bilibili](https://www.bilibili.com/video/BV1Uh4y1R7RC)
 
 ```sh
+#  [ios (default), android (default), windows (default), linux (default), macos (default), web (default)]
 flutter create .
 flutter run
+#
+flutter create . --platforms windows
+flutter run -d windows
+#
+flutter run -d macos
 ```

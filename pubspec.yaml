@@ -23,13 +23,10 @@ dependencies:
   # https://pub.dev/packages/collection
   collection: ^1.17.1
   #
-  #  # https://pub.dev/packages/logger
-  #  logger: ^2.0.2
-  # https://pub.dev/packages/logging
-  logging: ^1.2.0
-  #
   # https://pub.dev/packages/uuid
   uuid: ^3.0.7
+  # https://pub.dev/packages/fixnum
+  fixnum: ^1.1.0
 
 dev_dependencies:
   flutter_test:
