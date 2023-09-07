@@ -19,6 +19,7 @@ export http_proxy=127.0.0.1:54776
 ```
 
 ### CocoaPods
+
 ```sh
 $ brew install cocoapods
 
@@ -28,7 +29,7 @@ $ pod --version
 
 ### Android
 
-- https://flutterservice.com/sdkmanager-command-not-found-flutter/
+- <https://flutterservice.com/sdkmanager-command-not-found-flutter/>
 
 ```sh
 flutter doctor --android-licenses
