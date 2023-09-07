@@ -1,6 +1,6 @@
 # hello_flutter_app
 
-![hello_flutter_app](2023-08-31_231606.png)
+<img src="2023-09-08_023056.png" alt="hello_flutter_app" style="width:700px" align="left" />
 
 ## SETUP
 
