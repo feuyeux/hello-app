@@ -33,3 +33,12 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+
+android
+ios
+web
+linux
+macos
+windows
+test
+.metadata

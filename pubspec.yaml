@@ -14,6 +14,22 @@ dependencies:
 
   english_words: ^4.0.0
   provider: ^6.0.0
+  #  https://pub.dev/packages/async
+  async: ^2.2.0
+  # https://pub.dev/packages/grpc
+  grpc: ^3.2.3
+  # https://pub.dev/packages/protobuf
+  protobuf: ^3.1.0
+  # https://pub.dev/packages/collection
+  collection: ^1.17.1
+  #
+  #  # https://pub.dev/packages/logger
+  #  logger: ^2.0.2
+  # https://pub.dev/packages/logging
+  logging: ^1.2.0
+  #
+  # https://pub.dev/packages/uuid
+  uuid: ^3.0.7
 
 dev_dependencies:
   flutter_test:

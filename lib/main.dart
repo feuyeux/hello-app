@@ -31,6 +31,7 @@ class HelloAppState extends ChangeNotifier {
 
   void getNext() {
     current = WordPair.random();
+
     notifyListeners();
   }
 
