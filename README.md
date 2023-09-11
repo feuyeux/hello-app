@@ -52,16 +52,26 @@ Doctor summary (to see all details, run flutter doctor -v):
 [✓] Network resources
 
 • No issues found!
+
+
+PS > flutter doctor
+Flutter assets will be downloaded from https://storage.flutter-io.cn. Make sure you trust this source!
+Doctor summary (to see all details, run flutter doctor -v):
+[√] Flutter (Channel stable, 3.10.6, on Microsoft Windows [Version 10.0.22621.2215], locale zh-CN)
+[√] Windows Version (Installed version of Windows is version 10 or higher)
+[√] Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+[√] Chrome - develop for the web
+[√] Visual Studio - develop for Windows (Visual Studio Community 2022 17.7.3)
+[√] Android Studio (version 2022.3)
+[√] IntelliJ IDEA Community Edition (version 2023.2)
+[√] VS Code (version 1.82.0)
+[√] Connected device (3 available)
+[√] Network resources
+
+• No issues found!
 ```
 
-## GUID
-
-DOCUMENT: [Building your first Flutter App - with a Codelab](https://codelabs.developers.google.com/codelabs/flutter-codelab-first)
-
-VIDEO：
-
-- [youtube](https://www.youtube.com/watch?v=8sAyPDLorek)
-- [bilibili](https://www.bilibili.com/video/BV1Uh4y1R7RC)
+### Run
 
 ```sh
 #  [ios (default), android (default), windows (default), linux (default), macos (default), web (default)]
@@ -73,3 +83,12 @@ flutter run -d windows
 #
 flutter run -d macos
 ```
+
+## GUID
+
+DOCUMENT: [Building your first Flutter App - with a Codelab](https://codelabs.developers.google.com/codelabs/flutter-codelab-first)
+
+VIDEO：
+
+- [youtube](https://www.youtube.com/watch?v=8sAyPDLorek)
+- [bilibili](https://www.bilibili.com/video/BV1Uh4y1R7RC)
