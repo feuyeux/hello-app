@@ -42,3 +42,5 @@ macos
 windows
 test
 .metadata
+
+node_modules
