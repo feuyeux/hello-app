@@ -4,8 +4,9 @@
 
 ```sh
 yarn create next-app --use-yarn
-hello-app
+# 命令行
 yarn add -D @tauri-apps/cli
+
 yarn tauri init
 
 yarn tauri dev
@@ -18,4 +19,17 @@ yarn add @tauri-apps/api
 ```sh
 cd src-tauri
 cargo add local-ip-address
+```
+
+mobile
+
+```sh
+# 命令行
+cargo install --git https://github.com/tauri-apps/tauri-mobile
+
+cargo mobile update
+
+cargo mobile init
+
+cargo android run
 ```

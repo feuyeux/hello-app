@@ -44,3 +44,6 @@ test
 .metadata
 
 node_modules
+.next
+gen
+target
