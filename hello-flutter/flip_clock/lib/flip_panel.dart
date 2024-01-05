@@ -59,6 +59,7 @@ class FlipClock extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: digitSize,
                 fontFamily: "RobotoMono",
+                /*color: Colors.red),*/
                 color: digitColor),
           ),
         );
