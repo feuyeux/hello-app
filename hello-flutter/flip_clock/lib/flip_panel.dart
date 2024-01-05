@@ -3,14 +3,15 @@ library flip_panel;
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:math' as math;
-import 'package:flip_clock/system_util.dart';
 
 typedef Widget DigitBuilder(BuildContext, int);
+typedef Widget IndexedItemBuilder(BuildContext, int);
+typedef Widget StreamItemBuilder<T>(BuildContext, T);
 
 @immutable
 class FlipClock extends StatelessWidget {
-  DigitBuilder? _digitBuilder;
-  Widget? _separator;
+  late final DigitBuilder? _digitBuilder;
+  late final Widget? _separator;
   final DateTime startTime;
   final EdgeInsets spacing;
   final FlipDirection flipDirection;
@@ -18,13 +19,14 @@ class FlipClock extends StatelessWidget {
   final bool countdownMode;
   final bool _showHours;
   final bool _showDays;
-  Duration? timeLeft;
+  late final Duration? timeLeft;
   /* Called when the countdown clock hits zero.*/
   final VoidCallback? onDone;
   final double height;
   final double width;
   final double screenWidth;
   final double screenHeight;
+  // ignore: use_key_in_widget_constructors
   FlipClock(
       {Key? key,
       required this.startTime,
@@ -253,10 +255,6 @@ class FlipClock extends StatelessWidget {
     );
   }
 }
-
-typedef Widget IndexedItemBuilder(BuildContext, int);
-
-typedef Widget StreamItemBuilder<T>(BuildContext, T);
 
 enum FlipDirection { up, down }
 
