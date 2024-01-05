@@ -6,11 +6,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  wakelock:
-  rxdart:
-dev_dependencies:
-  flutter_test:
-  flutter_lints: ^2.0.0
+  cupertino_icons: ^1.0.6
+  wakelock: ^0.6.2
+  # https://pub.dev/packages/rxdart
+  rxdart: ^0.27.7
 flutter:
   uses-material-design: true
+  fonts:
+    - family: RobotoMono
+      fonts:
+        # https://fonts.google.com/specimen/Roboto+Mono?classification=Monospace
+        - asset: fonts/RobotoMono-Regular.ttf
+        - asset: fonts/RobotoMono-Bold.ttf
+          weight: 700
