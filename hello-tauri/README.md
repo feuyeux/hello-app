@@ -1,5 +1,7 @@
 # hello tauri
 
+## next.js
+
 [Guides-Getting Started-Quick Start-Next.js](https://tauri.app/v1/guides/getting-started/setup/next-js/)
 
 ```sh
@@ -16,16 +18,14 @@ yarn tauri init
 yarn tauri dev
 ```
 
+### add feature to rust code
+
 ```sh
 cd src-tauri
 cargo add local-ip-address
 ```
 
-mobile
-
-```
-
-```
+## mobile
 
 ```sh
 # cargo mobile命令行
@@ -33,6 +33,23 @@ cargo install --git https://github.com/tauri-apps/tauri-mobile
 ls -l "$HOME/.cargo/bin/cargo-android"
 ls -l "$HOME/.cargo/bin/cargo-apple"
 ls -l "$HOME/.cargo/bin/cargo-mobile"
+```
+
+```sh
+# cargo tauri命令行
+cargo install tauri-cli --version "^2.0.0-alpha"
+ls -l "$HOME/.cargo/bin/cargo-tauri"
+```
+
+Additionally, all projects need to update the core Cargo dependencies, by running the following in the src-tauri folder:
+
+```sh
+cargo add tauri@2.0.0-alpha.0
+cargo add tauri-build@2.0.0-alpha.0 --build
+```
+
+```sh
+yarn add -D internal-ip
 ```
 
 ```sh
