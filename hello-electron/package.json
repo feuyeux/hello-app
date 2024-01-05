@@ -1,0 +1,14 @@
+{
+  "name": "hello-electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "feuyeux@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.1.1"
+  }
+}
