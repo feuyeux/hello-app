@@ -1,0 +1,5 @@
+[app]
+name = "hello-tauri"
+stylized-name = "Hello Tauri"
+domain = "example.com"
+template-pack = "wry"
