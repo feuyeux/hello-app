@@ -73,6 +73,15 @@ Doctor summary (to see all details, run flutter doctor -v):
 • No issues found!
 ```
 
+>```sh
+>✗ Unable to find bundled Java version.
+>```
+>
+>**WINDOWS SOLVED**
+>GO TO C:\Program Files\Android\Android Studio
+>then copy the content of jbr and paste the content into jre folder
+>run doctor again and problem solved
+
 ## Run
 
 ```sh
