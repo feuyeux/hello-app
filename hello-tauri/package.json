@@ -18,7 +18,7 @@
     "@tauri-apps/cli": "^1.5.9",
     "@types/node": "^20",
     "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react-dom": "^19",
     "internal-ip": "^8.0.0",
     "typescript": "^5"
   }
