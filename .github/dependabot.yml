@@ -1,0 +1,31 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "hello-electron"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "hello-flutter/hello_flutter_app"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "hello-flutter/flip_clock"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "hello-tauri"
+    schedule:
+      interval: "daily"  
+  - package-ecosystem: "cargo"
+    directory: "hello-tauri"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "cargo"
+    directory: "hello-tauri/src-tauri"
+    schedule:
+      interval: "daily"
