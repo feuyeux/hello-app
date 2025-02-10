@@ -1,21 +1,23 @@
+<!-- markdownlint-disable MD033 MD045 -->
+
 # hello app
 
 To develop **app**(cross-platform desktop applications) running seamlessly on **Windows**, **macOS** and **Linux**, or **Android** and **iOS**.
 
 |Framework|Doc|By|Language|Engine|
 |:--|:--|:--|:--|:--|
-|[Electron](https://github.com/electron/electron) ![](https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg)|<https://www.electronjs.org/docs/latest/>|Github|Node.js|Chromium|
-|[Flutter](https://github.com/flutter/flutter) ![](https://www.svgrepo.com/download/353751/flutter.svg)|<https://docs.flutter.dev/>|Google|Dart|Flutter engine|
-|[Tauri](https://github.com/tauri-apps/tauri)![](https://worldvectorlogo.com/download/tauri-1.svg)|<https://tauri.app/>|-|Rust|WRY|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg" width="60"/> [Electron](https://github.com/electron/electron) |<https://www.electronjs.org/docs/latest/>|Github|Node.js|Chromium|
+|<img src="https://www.svgrepo.com/download/353751/flutter.svg" width="60"/> [Flutter](https://github.com/flutter/flutter)|<https://docs.flutter.dev/>|Google|Dart|Flutter engine|
+|<img src="https://images.seeklogo.com/logo-png/43/1/tauri-logo-png_seeklogo-430949.png" width="60"/> [Tauri](https://github.com/tauri-apps/tauri)|<https://tauri.app/>|-|Rust|WRY|
 
-node sources
+## node sources
 
 ```sh
 npm config set registry https://registry.npmmirror.com
 yarn config set registry https://registry.npmmirror.com
 ```
 
-android
+## android
 
 > NDK：<https://developer.android.com/ndk/downloads>
 
@@ -29,6 +31,8 @@ export PATH="$PATH:$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools/"
 $ emulator -list-avds
 Medium_Phone_API_31
 ```
+
+## emulator
 
 ```sh
 emulator -avd Medium_Phone_API_31
