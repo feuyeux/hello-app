@@ -4,9 +4,9 @@ To develop **app**(cross-platform desktop applications) running seamlessly on **
 
 |Framework|Doc|By|Language|Engine|
 |:--|:--|:--|:--|:--|
-|[Electron](https://github.com/electron/electron)|<https://www.electronjs.org/docs/latest/>|Github|Node.js|Chromium|
-|[Flutter](https://github.com/flutter/flutter)|<https://docs.flutter.dev/>|Google|Dart|Flutter engine|
-|[Tauri](https://github.com/tauri-apps/tauri)|<https://tauri.app/>|-|Rust|WRY|
+|[Electron](https://github.com/electron/electron) ![](https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg)|<https://www.electronjs.org/docs/latest/>|Github|Node.js|Chromium|
+|[Flutter](https://github.com/flutter/flutter) ![](https://www.svgrepo.com/download/353751/flutter.svg)|<https://docs.flutter.dev/>|Google|Dart|Flutter engine|
+|[Tauri](https://github.com/tauri-apps/tauri)![](https://worldvectorlogo.com/download/tauri-1.svg)|<https://tauri.app/>|-|Rust|WRY|
 
 node sources
 
