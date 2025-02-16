@@ -1,7 +1,9 @@
 # hello flutter
 
+<https://docs.flutter.cn/>
+
 <!-- markdownlint-disable MD033 -->
-<img src="2023-09-08_023056.png" alt="hello_flutter_app" style="width:700px" align="left" />
+<img src="img/2023-09-08_023056.png" alt="hello_flutter_app" style="width:700px" align="left" />
 <!-- markdownlint-enable MD033 -->
 
 ## SETUP
