@@ -63,3 +63,4 @@ coverage/
 lib-cov/
 .cargo/
 package-lock.json
+.vite/
