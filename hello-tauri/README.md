@@ -14,4 +14,4 @@ The Core Process
 
 - [tauri](https://v2.tauri.app/)
 - [vite](https://vite.dev/)
-- [vanilla](http://vanilla-js.com/)
+- [vanilla](http://vanilla-js.com/) [nextjs](https://nextjs.org/)
