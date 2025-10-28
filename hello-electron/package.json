@@ -9,6 +9,6 @@
   "author": "feuyeux@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^38.0.0"
+    "electron": "^39.0.0"
   }
 }
