@@ -24,7 +24,7 @@ dependencies:
   collection: ^1.17.1
   #
   # https://pub.dev/packages/uuid
-  uuid: ^3.0.7
+  uuid: ^4.5.2
   # https://pub.dev/packages/fixnum
   fixnum: ^1.1.0
   # https://pub.dev/packages/geolocator
