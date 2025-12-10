@@ -19,7 +19,7 @@ dependencies:
   # https://pub.dev/packages/grpc
   grpc: ^5.0.0
   # https://pub.dev/packages/protobuf
-  protobuf: ^5.0.0
+  protobuf: ^6.0.0
   # https://pub.dev/packages/collection
   collection: ^1.17.1
   #
