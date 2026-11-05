@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:wakelock/wakelock.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 import 'system_util.dart';
 import 'flip_panel.dart';
 
@@ -51,7 +51,7 @@ class _FlipClockState extends State<FlipClockPage> with WidgetsBindingObserver {
   void initState() {
     super.initState();
 
-    Wakelock.enable();
+    WakelockPlus.enable();
   }
 
   @override
@@ -66,7 +66,7 @@ class _FlipClockState extends State<FlipClockPage> with WidgetsBindingObserver {
   void dispose() {
     super.dispose();
 
-    Wakelock.disable();
+    WakelockPlus.disable();
   }
 
   @override

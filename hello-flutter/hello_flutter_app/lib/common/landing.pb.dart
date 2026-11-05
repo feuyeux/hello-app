@@ -58,7 +58,6 @@ class TalkRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static TalkRequest create() => TalkRequest._();
   TalkRequest createEmptyInstance() => create();
-  static $pb.PbList<TalkRequest> createRepeated() => $pb.PbList<TalkRequest>();
   @$core.pragma('dart2js:noInline')
   static TalkRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TalkRequest>(create);
   static TalkRequest? _defaultInstance;
@@ -124,7 +123,6 @@ class TalkResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static TalkResponse create() => TalkResponse._();
   TalkResponse createEmptyInstance() => create();
-  static $pb.PbList<TalkResponse> createRepeated() => $pb.PbList<TalkResponse>();
   @$core.pragma('dart2js:noInline')
   static TalkResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TalkResponse>(create);
   static TalkResponse? _defaultInstance;
@@ -187,7 +185,6 @@ class TalkResult extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static TalkResult create() => TalkResult._();
   TalkResult createEmptyInstance() => create();
-  static $pb.PbList<TalkResult> createRepeated() => $pb.PbList<TalkResult>();
   @$core.pragma('dart2js:noInline')
   static TalkResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TalkResult>(create);
   static TalkResult? _defaultInstance;

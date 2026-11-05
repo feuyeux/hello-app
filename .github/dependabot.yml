@@ -29,3 +29,11 @@ updates:
     directory: "hello-tauri/src-tauri"
     schedule:
       interval: "daily"
+  - package-ecosystem: "cargo"
+    directory: "hello-gpui"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "cargo"
+    directory: "hello-nsh"
+    schedule:
+      interval: "daily"

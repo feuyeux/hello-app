@@ -64,3 +64,9 @@ lib-cov/
 .cargo/
 package-lock.json
 .vite/
+
+# SvelteKit generated
+.svelte-kit/
+
+# NSH generated
+.nsh/
