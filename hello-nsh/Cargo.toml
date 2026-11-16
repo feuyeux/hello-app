@@ -8,7 +8,7 @@ publish = false
 [workspace]
 
 [dependencies]
-nsh-core = "0.4.0"
+nsh-core = "0.5.0"
 nsh-base = "0.4.0"
 env_logger = "0.11"
 chrono = "0.4.45"
